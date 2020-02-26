@@ -1,27 +1,27 @@
 /******************
  * YOUR CODE HERE *
  ******************/
-function slice (str, returnStrfromThatIndexNum, returnStrEmptyBeyondlengthOfStrNum) {
-  if (str !== undefined && typeof returnStrfromThatIndexNum === 'undefined' && typeof returnStrEmptyBeyondlengthOfStrNum === 'undefined') {
-    return str;
-  } else if (str && typeof returnStrfromThatIndexNum === 'number' && typeof returnStrEmptyBeyondlengthOfStrNum === 'undefined') {
-    return str.substring(returnStrfromThatIndexNum); 
-  } else if (str && typeof returnStrfromThatIndexNum === 'number' && typeof returnStrEmptyBeyondlengthOfStrNum === 'number') {
-    return str.substring(returnStrfromThatIndexNum, returnStrEmptyBeyondlengthOfStrNum);
-  } else {
-    return str;
-  }
-  }
-/*
+function slice (str, num1, num2) {
+  let tempStr = '';
 
-function includes (arr, hold){
-  for (let i = 0; i < arr.length; i ++){
-    if(arr[i] === hold){
-      return true;}
+  for (let i = 0; i < str.length; i++) {
+      if (typeof num1 === 'undefined' 
+        && typeof num2 === 'undefined') {
+        return str;
+
+      } else if ( typeof num1 === 'number' 
+        && typeof num2 === 'undefined' && i >= num1 && i < str.length) {
+            tempStr = tempStr + str[i];
+            return tempStr;
+      } else if (typeof num1 === 'number' &&
+      typeof num2 === 'number' && i >=num1 && i <= num2) {
+            tempStr = tempStr + str[i];
+      }
+      
+    }
+    return tempStr;
   }
-return false;
-} 
-*/
+
 function repeat (str, repeatStrNum) {
 let intermediateEmptyStr = '';
 for (i = 0; i < repeatStrNum; i++) {
@@ -115,8 +115,15 @@ split('hello')
 
 
 function trimStart (str) {
-
+  let countSpaceFromStart = 0;
+  for (let i = 0; i < str.length; i++) {
+// check the beginning of the string for spaces and find the number of index where spaces at the beginning end
+// slice the string from that beginning end of spaces till the end of the string.
+  if (str.charAt(0) === ' ' && str.charAt(i) === ' ')
+  countSpaceFromStart++;
 }
+}
+trimStart('     Hello There')
 
 function trimEnd (str) {
 
