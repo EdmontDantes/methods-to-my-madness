@@ -9,13 +9,14 @@ function slice (str, num1, num2) {
         && typeof num2 === 'undefined') {
         return str;
 
-      } else if ( typeof num1 === 'number' 
+      } else if (typeof num1 === 'number' 
         && typeof num2 === 'undefined' && i >= num1 && i < str.length) {
             tempStr = tempStr + str[i];
-            return tempStr;
+
       } else if (typeof num1 === 'number' &&
-      typeof num2 === 'number' && i >=num1 && i <= num2) {
+      typeof num2 === 'number' && i >=num1 && i < num2 && i < str.length) {
             tempStr = tempStr + str[i];
+
       }
       
     }
