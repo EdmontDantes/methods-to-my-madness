@@ -92,25 +92,15 @@ function join (strArray, mightySeparator) {
 
 function split (str, mightySeparator) {
   const emptyArray = [];
+  let emptyStr = '';
     if (str !== undefined && mightySeparator === undefined) {
       emptyArray.push(str);
 
       return emptyArray;
     }else {
       for (let i = 0; i < str.length; i++) {
-      
 
-
-        // if (str[i] === mightySeparator) {
-        //    console.log(str[i])
-        //   let slicedStrStart = slice(str, 0, str.indexOf(mightySeparator))
-        //   console.log(slicedStrStart)
-        //   let slicedStrEnd = slice(str, ((str.indexOf(mightySeparator)) + 1))
-        //   console.log(slicedStrEnd)
-        //   emptyArray.push(slicedStrStart);
-        //   emptyArray.push(slicedStrEnd);
-        // }
-    }
+      }
 
   }
   return emptyArray;
