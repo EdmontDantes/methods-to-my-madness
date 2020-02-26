@@ -32,9 +32,6 @@ return intermediateEmptyStr;
 }
 
 function startsWith (firstGivenStr, secondGivenStr) {
-//can tell whether the first given string starts with the second single-character string
-//can tell whether the first given string starts with the second milti-character string
-//can tell whether the first given string starts with the second given string when the strings are identical
     if (firstGivenStr === secondGivenStr) {
       return true;
     } else if (firstGivenStr.charAt(0) === secondGivenStr.charAt(0)
@@ -65,11 +62,6 @@ function endsWith (firstGivenStr, secondGivenStr) {
     } else if (firstGivenStr.charAt(firstGivenStr.length-1) === secondGivenStr.charAt(0) 
     && secondGivenStr.length === 1) {
       return true;
-    // } else if (firstGivenStr.charAt(firstGivenStr.length-1) === secondGivenStr.charAt(firstGivenStr.length-1)
-    // && firstGivenStr.charAt(firstGivenStr.length-2) === secondGivenStr.charAt(firstGivenStr.length-2) 
-    // && firstGivenStr.charAt(firstGivenStr.length-3) === secondGivenStr.charAt(firstGivenStr.length-3)
-    // && secondGivenStr.length > 1) {
-    //   return true;
     } else {
       return false;
     }
@@ -100,19 +92,31 @@ function join (strArray, mightySeparator) {
 
 function split (str, mightySeparator) {
   const emptyArray = [];
-  if (str !== undefined && mightySeparator === undefined) {
-    emptyArray.push(str);
+    if (str !== undefined && mightySeparator === undefined) {
+      emptyArray.push(str);
 
-    return emptyArray;
+      return emptyArray;
+    }else {
+      for (let i = 0; i < str.length; i++) {
+      
+
+
+        // if (str[i] === mightySeparator) {
+        //    console.log(str[i])
+        //   let slicedStrStart = slice(str, 0, str.indexOf(mightySeparator))
+        //   console.log(slicedStrStart)
+        //   let slicedStrEnd = slice(str, ((str.indexOf(mightySeparator)) + 1))
+        //   console.log(slicedStrEnd)
+        //   emptyArray.push(slicedStrStart);
+        //   emptyArray.push(slicedStrEnd);
+        // }
+    }
+
   }
-
-  for (let i = 0; i < str.length; i++) {
-  }
-
   return emptyArray;
 }
 
-split('hello')
+console.log(split('hello.hi'))
 
 
 function trimStart (str) {
